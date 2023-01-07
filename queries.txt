@@ -1,0 +1,139 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Nov 27, 2022 at 07:39 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `project`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exam`
+--
+
+CREATE TABLE `exam` (
+  `cid` int(11) NOT NULL,
+  `ename` varchar(100) NOT NULL,
+  `time` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faculty`
+--
+
+CREATE TABLE `faculty` (
+  `cid` int(11) NOT NULL,
+  `cname` varchar(100) NOT NULL,
+  `faculty` varchar(100) NOT NULL,
+  `hod` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `grade`
+--
+
+CREATE TABLE `grade` (
+  `enroll` int(11) NOT NULL,
+  `semester` int(11) NOT NULL,
+  `sgpa` int(11) NOT NULL,
+  `cgpa` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login_ids`
+--
+
+CREATE TABLE `login_ids` (
+  `enroll` int(11) NOT NULL,
+  `passwd` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `login_ids`
+--
+
+INSERT INTO `login_ids` (`enroll`, `passwd`) VALUES
+(21803001, 'chimpanzi'),
+(21803011, 'anshMi011'),
+(21803013, 'vScode'),
+(21803014, 'vermaji'),
+(21803015, 'vjHarshit'),
+(21803018, 'guptaji');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetable`
+--
+
+CREATE TABLE `timetable` (
+  `cid` int(11) NOT NULL,
+  `time` varchar(100) NOT NULL,
+  `mon` varchar(100) DEFAULT NULL,
+  `tue` varchar(100) DEFAULT NULL,
+  `wed` varchar(100) DEFAULT NULL,
+  `thurs` varchar(100) DEFAULT NULL,
+  `fri` varchar(100) DEFAULT NULL,
+  `sat` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `exam`
+--
+ALTER TABLE `exam`
+  ADD PRIMARY KEY (`cid`);
+
+--
+-- Indexes for table `faculty`
+--
+ALTER TABLE `faculty`
+  ADD PRIMARY KEY (`cid`);
+
+--
+-- Indexes for table `grade`
+--
+ALTER TABLE `grade`
+  ADD PRIMARY KEY (`enroll`);
+
+--
+-- Indexes for table `login_ids`
+--
+ALTER TABLE `login_ids`
+  ADD PRIMARY KEY (`enroll`);
+
+--
+-- Indexes for table `timetable`
+--
+ALTER TABLE `timetable`
+  ADD PRIMARY KEY (`cid`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
