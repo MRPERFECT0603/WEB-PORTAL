@@ -4,7 +4,10 @@
 A web Based College portal with Mysql database,that serves for fullfillment of a students need in his college life.
 
 ### Features ->
-- 
+- The front-End is built with bootstrap. 
+- MySql database is used to store all the data.
+- PHP is used to connect FrontEnd and BackEnd.
+- Basic facilties are given like academic and non-academic functions.
 
 ## About Us:
 ### Team Members ->
